@@ -28,7 +28,7 @@ public class LibraryController {
                 int itemNum = InputUtils.readInt();
                 MenuItem choose = MenuItem.values()[itemNum];
                 processMenuItem(choose);
-            } catch (Exception e){
+            } catch (NumberFormatException | IndexOutOfBoundsException e){
                 System.exit(0);
             }
         }
