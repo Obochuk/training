@@ -29,7 +29,7 @@ public abstract class Enum<E extends Enum<E>> implements Comparable<E> {
             List<Enum> values = (List<Enum>) valuesField.get(null);
             return searchEnumValue(name, values);
         } catch (IllegalAccessException | ClassCastException | NoSuchFieldException e){
-            throw new RuntimeException("Desired enum type doesn`t support this operation!");
+            throw new UnsupportedOperationException("Desired enum type doesn`t support this operation!");
         }
     }
 
