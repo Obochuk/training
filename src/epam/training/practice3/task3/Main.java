@@ -1,5 +1,6 @@
-package epam.training.practice3;
+package epam.training.practice3.task3;
 import java.lang.*;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +17,11 @@ public class Main {
 
         PhoneManufacture[] manufactures = PhoneManufacture.values();
         for (Enum manufacture : manufactures) {
-            System.out.println(manufacture.getName() + " " + manufacture.getOrdinal());
+            System.out.println(manufacture.getNAME() + " " + manufacture.getORDINAL());
         }
+
+        Arrays.sort(manufactures);
+        System.out.println(Arrays.toString(manufactures));
+
     }
 }

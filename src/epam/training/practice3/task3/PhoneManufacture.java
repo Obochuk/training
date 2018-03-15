@@ -1,4 +1,4 @@
-package epam.training.practice3;
+package epam.training.practice3.task3;
 
 import java.util.LinkedList;
 import java.util.List;

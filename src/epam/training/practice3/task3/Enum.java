@@ -1,27 +1,27 @@
-package epam.training.practice3;
+package epam.training.practice3.task3;
 
 import java.lang.reflect.Field;
 import java.util.List;
 
 public abstract class Enum<E extends Enum<E>> implements Comparable<E> {
-    private final String name;
-    private final int ordinal;
+    private final String NAME;
+    private final int ORDINAL;
 
     protected Enum(String name, int ordinal) {
-        this.name = name;
-        this.ordinal = ordinal;
+        this.NAME = name;
+        this.ORDINAL = ordinal;
     }
 
 
-    public final String getName() {
-        return name;
+    public final String getNAME() {
+        return NAME;
     }
 
-    public final int getOrdinal() {
-        return ordinal;
+    public final int getORDINAL() {
+        return ORDINAL;
     }
 
-    public static <T extends Enum<T>> Enum valueOf(Class<T> type, String name){
+    public final static <T extends Enum<T>> Enum valueOf(Class<T> type, String name){
         final String VALUES_FIELD = "values";
         try {
             Field valuesField = type.getDeclaredField(VALUES_FIELD);
@@ -35,7 +35,7 @@ public abstract class Enum<E extends Enum<E>> implements Comparable<E> {
 
     private static Enum searchEnumValue(String name, List<Enum> enumValues){
         for (Enum value : enumValues) {
-            if (value.getName().equals(name)){
+            if (value.getNAME().equals(name)){
                 return value;
             }
         }
@@ -54,7 +54,7 @@ public abstract class Enum<E extends Enum<E>> implements Comparable<E> {
 
     @Override
     public String toString() {
-        return name;
+        return NAME;
     }
 
     @Override
@@ -63,11 +63,11 @@ public abstract class Enum<E extends Enum<E>> implements Comparable<E> {
     }
 
     @Override
-    public int compareTo(E o) {
+    public final int compareTo(E o) {
         Enum<?> arg = o;
         if (arg.getClass() != this.getClass())
             throw new ClassCastException("Cannot compare to another type, this.class=" + this.getClass() +
                     ", supplied class=" + arg.getClass());
-        return arg.ordinal - this.ordinal;
+        return arg.ORDINAL - this.ORDINAL;
     }
 }
