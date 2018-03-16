@@ -1,9 +1,9 @@
 package epam.training.practice3.task2.carriage;
 
 public abstract class Carriage {
-    double maxLoad;
-    double maxSpeed;
-    Direction direction;
+    private double maxLoad;
+    private double maxSpeed;
+    private Direction direction;
 
     public double getMaxLoad() {
         return maxLoad;
@@ -21,4 +21,12 @@ public abstract class Carriage {
         this.maxSpeed = maxSpeed;
     }
 
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
 }
