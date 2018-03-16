@@ -9,6 +9,8 @@ public abstract class PassangersCarriage extends Carriage{
     private int disabledPeopleSeats;
     protected Facility[] facilities;
 
+    public PassangersCarriage(){}
+
     public PassangersCarriage(double maxLoad, double maxSpeed, int seats) {
         this(maxLoad, maxSpeed, seats, 0);
     }
