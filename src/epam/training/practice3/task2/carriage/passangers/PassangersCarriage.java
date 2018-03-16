@@ -1,22 +1,22 @@
 package epam.training.practice3.task2.carriage.passangers;
 
-public abstract class PassangersCarriage {
+import epam.training.practice3.task2.carriage.Carriage;
+
+import java.util.List;
+
+public abstract class PassangersCarriage extends Carriage{
     private int seats;
     private int disabledPeopleSeats;
-    private boolean bedding;
+    protected Facility[] facilities;
 
-    public PassangersCarriage(int seats) {
-        this(seats, 0);
+    public PassangersCarriage(double maxLoad, double maxSpeed, int seats) {
+        this(maxLoad, maxSpeed, seats, 0);
     }
 
-    public PassangersCarriage(int seats, int disabledPeopleSeats) {
-        this(seats, disabledPeopleSeats, false);
-    }
-
-    public PassangersCarriage(int seats, int disabledPeopleSeats, boolean bedding) {
+    public PassangersCarriage(double maxLoad, double maxSpeed, int seats, int disabledPeopleSeats) {
+        super(maxLoad, maxSpeed);
         this.seats = seats;
         this.disabledPeopleSeats = disabledPeopleSeats;
-        this.bedding = bedding;
     }
 
     public int getSeats() {
@@ -35,11 +35,15 @@ public abstract class PassangersCarriage {
         this.disabledPeopleSeats = disabledPeopleSeats;
     }
 
-    public boolean isBedding() {
-        return bedding;
+    public Facility[] getFacilities() {
+        return facilities;
     }
 
-    public void setBedding(boolean bedding) {
-        this.bedding = bedding;
+    public int getComfortLevel(){
+        int comfortLevel = 0;
+        for (Facility facility : facilities) {
+            comfortLevel += facility.getComfortLevel();
+        }
+        return comfortLevel;
     }
 }

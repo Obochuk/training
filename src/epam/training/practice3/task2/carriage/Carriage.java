@@ -5,6 +5,11 @@ public abstract class Carriage {
     private double maxSpeed;
     private Direction direction;
 
+    public Carriage(double maxLoad, double maxSpeed) {
+        this.maxLoad = maxLoad;
+        this.maxSpeed = maxSpeed;
+    }
+
     public double getMaxLoad() {
         return maxLoad;
     }
