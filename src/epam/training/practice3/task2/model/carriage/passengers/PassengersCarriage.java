@@ -1,21 +1,20 @@
-package epam.training.practice3.task2.carriage.passangers;
+package epam.training.practice3.task2.model.carriage.passengers;
 
-import epam.training.practice3.task2.carriage.Carriage;
+import epam.training.practice3.task2.model.carriage.Carriage;
 
-import java.util.List;
-
-public abstract class PassangersCarriage extends Carriage{
+public abstract class PassengersCarriage extends Carriage {
+    protected Facility[] facilities;
     private int seats;
     private int disabledPeopleSeats;
-    protected Facility[] facilities;
 
-    public PassangersCarriage(){}
+    public PassengersCarriage() {
+    }
 
-    public PassangersCarriage(double maxLoad, double maxSpeed, int seats) {
+    public PassengersCarriage(double maxLoad, double maxSpeed, int seats) {
         this(maxLoad, maxSpeed, seats, 0);
     }
 
-    public PassangersCarriage(double maxLoad, double maxSpeed, int seats, int disabledPeopleSeats) {
+    public PassengersCarriage(double maxLoad, double maxSpeed, int seats, int disabledPeopleSeats) {
         super(maxLoad, maxSpeed);
         this.seats = seats;
         this.disabledPeopleSeats = disabledPeopleSeats;
@@ -41,11 +40,22 @@ public abstract class PassangersCarriage extends Carriage{
         return facilities;
     }
 
-    public int getComfortLevel(){
+    public int getAmountOfSeats() {
+        return seats + disabledPeopleSeats;
+    }
+
+    public int getComfortLevel() {
         int comfortLevel = 0;
         for (Facility facility : facilities) {
             comfortLevel += facility.getComfortLevel();
         }
         return comfortLevel;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                ", seats amount=" + seats +
+                ", disabled people seats amount=" + disabledPeopleSeats;
     }
 }

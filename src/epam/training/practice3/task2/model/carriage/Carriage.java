@@ -1,11 +1,12 @@
-package epam.training.practice3.task2.carriage;
+package epam.training.practice3.task2.model.carriage;
 
 public abstract class Carriage {
     private double maxLoad;
     private double maxSpeed;
     private Direction direction;
 
-    public Carriage(){}
+    public Carriage() {
+    }
 
     public Carriage(double maxLoad, double maxSpeed) {
         this.maxLoad = maxLoad;
@@ -35,5 +36,12 @@ public abstract class Carriage {
 
     public void setDirection(Direction direction) {
         this.direction = direction;
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() +
+                ", maxLoad=" + maxLoad +
+                ", maxSpeed=" + maxSpeed;
     }
 }

@@ -1,4 +1,4 @@
-package epam.training.practice3.task2.carriage;
+package epam.training.practice3.task2.model.carriage;
 
 public class Direction {
     private String from;
@@ -6,6 +6,13 @@ public class Direction {
     private boolean park;
     private boolean repair;
 
+    public Direction() {
+    }
+
+    public Direction(String from, String to) {
+        this.from = from;
+        this.to = to;
+    }
 
     public String getFrom() {
         return from;
