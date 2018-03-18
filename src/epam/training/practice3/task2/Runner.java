@@ -7,7 +7,7 @@ import epam.training.practice3.task2.view.TrainView;
 
 public class Runner {
     public static void run(){
-        TrainModel<PassengersCarriage> model= new TrainModel<>();
+        TrainModel<PassengersCarriage> model= new TrainModel<>(PassengersCarriage.class);
         TrainView view = new TrainView();
         TrainCreationController creationController = new TrainCreationController(view, model);
         creationController.process();

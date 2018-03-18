@@ -10,7 +10,12 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class TrainModel<T extends Carriage> {
+    private final Class<T> thisClass;
     private List<T> train = new ArrayList<T>();
+
+    public TrainModel(Class<T> thisClass) {
+        this.thisClass = thisClass;
+    }
 
     public List<T> getTrain() {
         return train;
@@ -20,8 +25,13 @@ public class TrainModel<T extends Carriage> {
         this.train = train;
     }
 
-    public void addCarriage(T carriage) {
-        train.add(carriage);
+    public void addCarriage(Carriage carriage) {
+        if (thisClass.isAssignableFrom(carriage.getClass())) {
+            train.add(thisClass.cast(carriage));
+        }
+        else {
+            throw new ClassCastException();
+        }
     }
 
     public long passengerAmount() {
