@@ -13,7 +13,7 @@ public class TrainView {
         System.out.println(message + ' ' + result);
     }
 
-    public String toString(Carriage[] carriages){
+    public String toString(List<? extends Carriage> carriages){
         StringBuilder builder = new StringBuilder();
         for (Carriage carriage : carriages) {
             builder.append(carriage.toString()).append('\n');

@@ -18,7 +18,7 @@ public class FilterBySeatsCommand implements Command {
         view.showMessage(InputMessages.INPUT_MAX_SEATS);
         int maxSeats = InputUtil.readInt();
         view.showMessage(ResultMessages.CARRIAGES_BY_RANGE_OF_SEAT);
-        Carriage[] carriages = model.filterBySeats(minSeats, maxSeats);
+        List<? extends Carriage> carriages = model.filterBySeats(minSeats, maxSeats);
         view.showMessage(view.toString(carriages));
     }
 }

@@ -4,43 +4,31 @@ import epam.training.practice3.task2.model.carriage.Carriage;
 import epam.training.practice3.task2.model.carriage.passengers.PassengersCarriage;
 import epam.training.practice3.task2.model.comparator.CarriageComfortComparator;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.function.Predicate;
 
 public class TrainModel<T extends Carriage> {
-    private final static int START_SIZE = 10;
-    private int size = 0;
-    private Carriage[] train = new Carriage[START_SIZE];
+    private List<T> train = new ArrayList<T>();
 
-    public T[] getTrain() {
-        return returnArray(train);
+    public List<T> getTrain() {
+        return train;
     }
 
-    public void setTrain(T[] train) {
+    public void setTrain(List<T> train) {
         this.train = train;
-        size = train.length;
     }
 
-    public void addCarriage(Carriage carriage) {
-        ensureCapacity();
-        train[size++] = carriage;
-    }
-
-    private void ensureCapacity(){
-        if (size + 1 > train.length){
-            final int NEW_SIZE = size * 2;
-            Carriage[] newTrainArray = new Carriage[NEW_SIZE];
-            System.arraycopy(train, 0, newTrainArray, 0, size);
-            train = newTrainArray;
-        }
+    public void addCarriage(T carriage) {
+        train.add(carriage);
     }
 
     public long passengerAmount() {
         long passengerAmount = 0L;
-        for (int i = 0; i < size; i++){
-            if (train[i] instanceof PassengersCarriage){
-                PassengersCarriage pc = (PassengersCarriage) train[i];
+        for (T carriage: train){
+            if (carriage instanceof PassengersCarriage){
+                PassengersCarriage pc = (PassengersCarriage) carriage;
                 passengerAmount = passengerAmount + pc.getAmountOfSeats();
             }
         }
@@ -49,26 +37,25 @@ public class TrainModel<T extends Carriage> {
 
     public long luggageAmount() {
         long luggageAmount = 0L;
-        for (int i = 0; i < size; i++){
-            luggageAmount += train[i].getMaxLoad();
+        for (T carriage: train){
+            luggageAmount += carriage.getMaxLoad();
         }
         return luggageAmount;
     }
 
-    public T[] sortCarriagesByComfort() {
+    public List<T> sortCarriagesByComfort() {
         return sort(new CarriageComfortComparator());
     }
 
-    public T[] sort(Comparator<Carriage> comparator) {
-        Carriage[] sortedCarriages = cutArray(train, size);
-        Arrays.sort(sortedCarriages, comparator);
-        return returnArray(sortedCarriages);
+    public List<T> sort(Comparator<Carriage> comparator) {
+        train.sort(comparator);
+        return train;
     }
 
-    public T[] filterBySeats(int min, int max) {
-        return filter(new Predicate<Carriage>() {
+    public List<T> filterBySeats(int min, int max) {
+        return filter(new Predicate<T>() {
             @Override
-            public boolean test(Carriage carriage) {
+            public boolean test(T carriage) {
                 if (carriage instanceof PassengersCarriage) {
                     PassengersCarriage pc = (PassengersCarriage) carriage;
                     return pc.getAmountOfSeats() > min && pc.getAmountOfSeats() < max;
@@ -78,29 +65,13 @@ public class TrainModel<T extends Carriage> {
         });
     }
 
-    public T[] filter(Predicate<Carriage> predicate) {
-        Carriage[] filteredTrain = new Carriage[size];
-        int pos = 0;
-        for (int i = 0; i < size; i++){
-            Carriage carriage = train[i];
+    public List<T> filter(Predicate<T> predicate) {
+        List<T> filteredTrain = new ArrayList<T>();
+        for (T carriage: train){
             if (predicate.test(carriage)) {
-                filteredTrain[pos++] = carriage;
+                filteredTrain.add(carriage);
             }
         }
-        return returnArray(filteredTrain);
-    }
-
-    private T[] returnArray(Carriage[] carriages){
-        int realSize = 0;
-        for (; carriages.length > realSize && carriages[realSize] != null ; realSize++);
-        return (T[]) cutArray(carriages, realSize);
-    }
-
-    private Carriage[] cutArray(Carriage[] carriages, int size){
-        if (size == 0)
-            return new Carriage[]{};
-        Carriage[] cut = new Carriage[size];
-        System.arraycopy(carriages, 0, cut, 0, size);
-        return cut;
+        return filteredTrain;
     }
 }

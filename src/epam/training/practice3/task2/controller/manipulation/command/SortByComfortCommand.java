@@ -12,7 +12,7 @@ public class SortByComfortCommand implements Command {
     @Override
     public void execute(TrainModel<? extends Carriage> model, TrainView view) {
         view.showMessage(ResultMessages.CARRIAGES_BY_COMFORT);
-        Carriage[] sortedCarriages = model.sortCarriagesByComfort();
-        view.showMessage(view.toString(sortedCarriages));
+        model.sortCarriagesByComfort();
+        view.showMessage(view.toString(model.getTrain()));
     }
 }

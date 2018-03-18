@@ -14,10 +14,10 @@ import epam.training.practice3.task2.view.constants.ResultMessages;
 
 public class TrainCreationController {
     private TrainView view;
-    private TrainModel<? extends Carriage> model;
+    private TrainModel<PassengersCarriage> model;
     final int ADD_CARRIAGE = 1;
 
-    public TrainCreationController(TrainView view, TrainModel<? extends Carriage> model) {
+    public TrainCreationController(TrainView view, TrainModel<PassengersCarriage> model) {
         this.view = view;
         this.model = model;
     }
@@ -33,7 +33,7 @@ public class TrainCreationController {
                 int typeChoose = InputUtil.readInt();
                 Carriage carriage = CarriageType.values()[typeChoose].getInstance();
                 try{
-                    model.addCarriage(carriage);
+                    model.addCarriage((PassengersCarriage) carriage);
                 } catch (ClassCastException e){
                     view.showMessage(ResultMessages.TYPE_ERROR);
                     continue;
