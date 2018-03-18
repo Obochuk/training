@@ -15,7 +15,7 @@ import epam.training.practice3.task2.view.constants.ResultMessages;
 public class TrainCreationController {
     private TrainView view;
     private TrainModel<? extends Carriage> model;
-    final int ADD_CARRIAGE = 1;
+    private final int ADD_CARRIAGE = 1;
 
     public TrainCreationController(TrainView view, TrainModel<? extends Carriage> model) {
         this.view = view;

@@ -26,18 +26,13 @@ public class TrainModel<T extends Carriage> {
     }
 
     public void addCarriage(Carriage carriage) {
-        if (thisClass.isAssignableFrom(carriage.getClass())) {
-            train.add(thisClass.cast(carriage));
-        }
-        else {
-            throw new ClassCastException();
-        }
+        train.add(thisClass.cast(carriage));
     }
 
     public long passengerAmount() {
         long passengerAmount = 0L;
-        for (T carriage: train){
-            if (carriage instanceof PassengersCarriage){
+        for (T carriage : train) {
+            if (carriage instanceof PassengersCarriage) {
                 PassengersCarriage pc = (PassengersCarriage) carriage;
                 passengerAmount = passengerAmount + pc.getAmountOfSeats();
             }
@@ -47,7 +42,7 @@ public class TrainModel<T extends Carriage> {
 
     public long luggageAmount() {
         long luggageAmount = 0L;
-        for (T carriage: train){
+        for (T carriage : train) {
             luggageAmount += carriage.getMaxLoad();
         }
         return luggageAmount;
@@ -77,7 +72,7 @@ public class TrainModel<T extends Carriage> {
 
     public List<T> filter(Predicate<T> predicate) {
         List<T> filteredTrain = new ArrayList<T>();
-        for (T carriage: train){
+        for (T carriage : train) {
             if (predicate.test(carriage)) {
                 filteredTrain.add(carriage);
             }
