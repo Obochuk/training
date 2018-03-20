@@ -1,5 +1,3 @@
-package epam.training.practice4.task1.src.test.java;
-
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;

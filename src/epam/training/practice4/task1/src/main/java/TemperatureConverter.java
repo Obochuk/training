@@ -1,5 +1,3 @@
-package epam.training.practice4.task1.src.main.java;
-
 public class TemperatureConverter {
     public double convertFtoC(double degreesFahrenheit) {
         return (degreesFahrenheit - 32.0) / 9.0 * 5.0;
