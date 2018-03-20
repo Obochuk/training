@@ -1,15 +1,15 @@
-package epam.training.practice3.task2.controller.creation;
+package controller.creation;
 
 
-import epam.training.practice3.task2.controller.manipulation.TrainManipulationController;
-import epam.training.practice3.task2.controller.utils.InputUtil;
-import epam.training.practice3.task2.model.TrainModel;
-import epam.training.practice3.task2.model.carriage.Carriage;
-import epam.training.practice3.task2.model.carriage.passengers.PassengersCarriage;
-import epam.training.practice3.task2.view.TrainView;
-import epam.training.practice3.task2.view.constants.InputMessages;
-import epam.training.practice3.task2.view.constants.Menu;
-import epam.training.practice3.task2.view.constants.ResultMessages;
+import controller.manipulation.TrainManipulationController;
+import controller.utils.InputUtil;
+import model.TrainModel;
+import model.carriage.Carriage;
+import model.carriage.passengers.PassengersCarriage;
+import view.TrainView;
+import view.constants.InputMessages;
+import view.constants.Menu;
+import view.constants.ResultMessages;
 
 
 public class TrainCreationController {

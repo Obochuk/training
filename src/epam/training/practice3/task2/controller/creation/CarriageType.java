@@ -1,14 +1,14 @@
-package epam.training.practice3.task2.controller.creation;
+package controller.creation;
 
-import epam.training.practice3.task2.model.carriage.Carriage;
-import epam.training.practice3.task2.model.carriage.freight.FreightCarriage;
-import epam.training.practice3.task2.model.carriage.passengers.compartmental.CompartmentalCar;
-import epam.training.practice3.task2.model.carriage.passengers.compartmental.LuxuryCar;
-import epam.training.practice3.task2.model.carriage.passengers.compartmental.SleepingCar;
-import epam.training.practice3.task2.model.carriage.passengers.ordinary.ReservedSeatsCar;
-import epam.training.practice3.task2.model.carriage.passengers.ordinary.sitting.SittingFirstClassCar;
-import epam.training.practice3.task2.model.carriage.passengers.ordinary.sitting.SittingSecondClassCar;
-import epam.training.practice3.task2.model.carriage.passengers.ordinary.sitting.SittingThirdClassCar;
+import model.carriage.Carriage;
+import model.carriage.freight.FreightCarriage;
+import model.carriage.passengers.compartmental.CompartmentalCar;
+import model.carriage.passengers.compartmental.LuxuryCar;
+import model.carriage.passengers.compartmental.SleepingCar;
+import model.carriage.passengers.ordinary.ReservedSeatsCar;
+import model.carriage.passengers.ordinary.sitting.SittingFirstClassCar;
+import model.carriage.passengers.ordinary.sitting.SittingSecondClassCar;
+import model.carriage.passengers.ordinary.sitting.SittingThirdClassCar;
 
 public enum CarriageType {
     FREIGHT(FreightCarriage.class), COMPARTMENTAL(CompartmentalCar.class), LUXURY(LuxuryCar.class), SLEEPING(SleepingCar.class),

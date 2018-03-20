@@ -1,6 +1,6 @@
-package epam.training.practice2.task2.view;
+package view;
 
-import epam.training.practice2.task2.model.entity.Book;
+import model.entity.Book;
 
 import java.util.List;
 

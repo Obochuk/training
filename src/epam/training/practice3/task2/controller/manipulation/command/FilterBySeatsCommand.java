@@ -1,11 +1,12 @@
-package epam.training.practice3.task2.controller.manipulation.command;
+package controller.manipulation.command;
 
-import epam.training.practice3.task2.controller.utils.InputUtil;
-import epam.training.practice3.task2.model.TrainModel;
-import epam.training.practice3.task2.model.carriage.Carriage;
-import epam.training.practice3.task2.view.TrainView;
-import epam.training.practice3.task2.view.constants.InputMessages;
-import epam.training.practice3.task2.view.constants.ResultMessages;
+import controller.manipulation.command.Command;
+import controller.utils.InputUtil;
+import model.TrainModel;
+import model.carriage.Carriage;
+import view.TrainView;
+import view.constants.InputMessages;
+import view.constants.ResultMessages;
 
 import java.util.List;
 

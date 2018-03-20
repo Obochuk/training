@@ -1,10 +1,10 @@
-package epam.training.practice3.task1.shop;
+package shop;
 
-import epam.training.practice3.task1.shop.etc.Product;
-import epam.training.practice3.task1.shop.etc.Service;
-import epam.training.practice3.task1.warehouse.Warehouse;
-import epam.training.practice3.task1.shop.user.authentication.AuthenticationToken;
-import epam.training.practice3.task1.shop.user.authentication.IllegalAuthenticationTokenException;
+import shop.etc.Product;
+import shop.etc.Service;
+import warehouse.Warehouse;
+import shop.user.authentication.AuthenticationToken;
+import shop.user.authentication.IllegalAuthenticationTokenException;
 
 import java.util.ArrayList;
 import java.util.List;

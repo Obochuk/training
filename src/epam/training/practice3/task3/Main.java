@@ -1,4 +1,3 @@
-package epam.training.practice3.task3;
 import java.lang.*;
 import java.util.Arrays;
 

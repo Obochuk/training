@@ -1,5 +1,3 @@
-package epam.training.practice1.task1;
-
 public class Runner {
     public static void run(){
         NumberFormat numberFormat = new NumberFormat();

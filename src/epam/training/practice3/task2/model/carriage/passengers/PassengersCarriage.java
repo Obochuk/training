@@ -1,6 +1,6 @@
-package epam.training.practice3.task2.model.carriage.passengers;
+package model.carriage.passengers;
 
-import epam.training.practice3.task2.model.carriage.Carriage;
+import model.carriage.Carriage;
 
 public abstract class PassengersCarriage extends Carriage {
     protected Facility[] facilities;

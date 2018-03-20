@@ -1,6 +1,6 @@
-package epam.training.practice2.task2.model.comparator;
+package model.comparator;
 
-import epam.training.practice2.task2.model.entity.Book;
+import model.entity.Book;
 
 import java.util.Comparator;
 

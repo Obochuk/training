@@ -1,6 +1,3 @@
-package epam.training.practice1.task2;
-
-
 public class BrilliantNumberChecker {
 
     public void run(){

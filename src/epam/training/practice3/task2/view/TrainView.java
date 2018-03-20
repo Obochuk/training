@@ -1,6 +1,6 @@
-package epam.training.practice3.task2.view;
+package view;
 
-import epam.training.practice3.task2.model.carriage.Carriage;
+import model.carriage.Carriage;
 
 import java.util.List;
 

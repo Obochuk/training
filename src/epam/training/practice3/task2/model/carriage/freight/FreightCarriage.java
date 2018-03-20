@@ -1,6 +1,6 @@
-package epam.training.practice3.task2.model.carriage.freight;
+package model.carriage.freight;
 
-import epam.training.practice3.task2.model.carriage.Carriage;
+import model.carriage.Carriage;
 
 public class FreightCarriage extends Carriage {
     public FreightCarriage(){}

@@ -1,4 +1,4 @@
-package epam.training.practice2.task2.view;
+package view;
 
 public interface InputMessages {
     String SPECIFY_AUTHOR = "Enter author name: ";

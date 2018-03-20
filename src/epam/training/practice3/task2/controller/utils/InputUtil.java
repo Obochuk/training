@@ -1,5 +1,6 @@
-package epam.training.practice3.task2.controller.utils;
+package controller.utils;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputUtil {
@@ -10,6 +11,10 @@ public class InputUtil {
     }
 
     public static int readInt(){
-        return scanner.nextInt();
+        while (true){
+            try {
+                return scanner.nextInt();
+            }catch (InputMismatchException ignored){}
+        }
     }
 }

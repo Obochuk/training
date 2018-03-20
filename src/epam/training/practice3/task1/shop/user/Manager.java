@@ -1,9 +1,9 @@
-package epam.training.practice3.task1.shop.user;
+package shop.user;
 
-import epam.training.practice3.task1.shop.etc.Product;
-import epam.training.practice3.task1.shop.etc.Service;
-import epam.training.practice3.task1.shop.Shop;
-import epam.training.practice3.task1.shop.user.authentication.AuthenticationToken;
+import shop.etc.Product;
+import shop.etc.Service;
+import shop.Shop;
+import shop.user.authentication.AuthenticationToken;
 
 public class Manager {
     private Shop.Department department;

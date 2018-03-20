@@ -1,9 +1,7 @@
-package epam.training.practice3.task2;
-
-import epam.training.practice3.task2.controller.creation.TrainCreationController;
-import epam.training.practice3.task2.model.TrainModel;
-import epam.training.practice3.task2.model.carriage.passengers.PassengersCarriage;
-import epam.training.practice3.task2.view.TrainView;
+import controller.creation.TrainCreationController;
+import model.TrainModel;
+import model.carriage.passengers.PassengersCarriage;
+import view.TrainView;
 
 public class Runner {
     public static void run(){

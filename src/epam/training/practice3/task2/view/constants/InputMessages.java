@@ -1,4 +1,4 @@
-package epam.training.practice3.task2.view.constants;
+package view.constants;
 
 public interface InputMessages {
     String CHOOSE_TYPE = "Choose type of carriage: ";

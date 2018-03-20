@@ -1,4 +1,4 @@
-package epam.training.practice3.task2.model.carriage;
+package model.carriage;
 
 public class Direction {
     private String from;

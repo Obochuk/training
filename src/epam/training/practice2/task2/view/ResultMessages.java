@@ -1,4 +1,4 @@
-package epam.training.practice2.task2.view;
+package view;
 
 public interface ResultMessages {
     String ALL_BOOKS = "List of books ";

@@ -1,11 +1,9 @@
-package epam.training.practice3.task1;
-
-import epam.training.practice3.task1.shop.Shop;
-import epam.training.practice3.task1.shop.etc.Product;
-import epam.training.practice3.task1.shop.etc.Service;
-import epam.training.practice3.task1.shop.user.Manager;
-import epam.training.practice3.task1.shop.user.ShopDirector;
-import epam.training.practice3.task1.warehouse.Warehouse;
+import shop.Shop;
+import shop.etc.Product;
+import shop.etc.Service;
+import shop.user.Manager;
+import shop.user.ShopDirector;
+import warehouse.Warehouse;
 
 public class Runner {
     public static void run() {

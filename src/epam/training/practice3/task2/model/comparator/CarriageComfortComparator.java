@@ -1,7 +1,7 @@
-package epam.training.practice3.task2.model.comparator;
+package model.comparator;
 
-import epam.training.practice3.task2.model.carriage.Carriage;
-import epam.training.practice3.task2.model.carriage.passengers.PassengersCarriage;
+import model.carriage.Carriage;
+import model.carriage.passengers.PassengersCarriage;
 
 import java.util.Comparator;
 

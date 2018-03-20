@@ -1,7 +1,6 @@
-package epam.training.practice2.task2.data;
+package data;
 
-
-import epam.training.practice2.task2.model.entity.Book;
+import model.entity.Book;
 
 import java.util.Arrays;
 import java.util.List;

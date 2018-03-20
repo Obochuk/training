@@ -1,4 +1,4 @@
-package epam.training.practice2.task2.view;
+package view;
 
 public interface Menu {
     String MENU = "0 - get list of books of specified author \n"

@@ -1,6 +1,3 @@
-package epam.training.practice1.task1;
-
-
 public class NumberFormat {
 
     public Number toBinary(int n){

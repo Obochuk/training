@@ -1,4 +1,4 @@
-package epam.training.practice3.task2.view.constants;
+package view.constants;
 
 public interface ResultMessages {
     String TYPE_ERROR = "This type of carriage cannot be added to train";

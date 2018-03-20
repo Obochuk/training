@@ -1,4 +1,4 @@
-package epam.training.practice3.task1.shop.user.authentication;
+package shop.user.authentication;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

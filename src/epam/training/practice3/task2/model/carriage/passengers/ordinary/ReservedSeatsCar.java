@@ -1,7 +1,7 @@
-package epam.training.practice3.task2.model.carriage.passengers.ordinary;
+package model.carriage.passengers.ordinary;
 
-import epam.training.practice3.task2.model.carriage.passengers.Facility;
-import epam.training.practice3.task2.model.carriage.passengers.PassengersCarriage;
+import model.carriage.passengers.Facility;
+import model.carriage.passengers.PassengersCarriage;
 
 public class ReservedSeatsCar extends PassengersCarriage {
     {

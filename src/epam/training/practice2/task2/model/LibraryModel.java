@@ -1,7 +1,7 @@
-package epam.training.practice2.task2.model;
+package model;
 
-import epam.training.practice2.task2.model.comparator.BookPublisherComparator;
-import epam.training.practice2.task2.model.entity.Book;
+import model.comparator.BookPublisherComparator;
+import model.entity.Book;
 
 import java.util.*;
 import java.util.function.Predicate;

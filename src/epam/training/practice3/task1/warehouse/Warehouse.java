@@ -1,4 +1,4 @@
-package epam.training.practice3.task1.warehouse;
+package warehouse;
 
 import java.util.*;
 

@@ -1,5 +1,3 @@
-package epam.training.practice1.task3;
-
 public class Pyramid {
     private int [][] pyramid;
 

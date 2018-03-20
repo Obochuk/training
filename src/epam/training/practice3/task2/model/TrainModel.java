@@ -1,8 +1,8 @@
-package epam.training.practice3.task2.model;
+package model;
 
-import epam.training.practice3.task2.model.carriage.Carriage;
-import epam.training.practice3.task2.model.carriage.passengers.PassengersCarriage;
-import epam.training.practice3.task2.model.comparator.CarriageComfortComparator;
+import model.carriage.Carriage;
+import model.carriage.passengers.PassengersCarriage;
+import model.comparator.CarriageComfortComparator;
 
 import java.util.ArrayList;
 import java.util.Comparator;

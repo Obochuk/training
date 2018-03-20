@@ -1,7 +1,4 @@
-package epam.training.practice2.task2.model.entity;
-
-
-import java.util.Date;
+package model.entity;
 
 public class Book {
     private String name;

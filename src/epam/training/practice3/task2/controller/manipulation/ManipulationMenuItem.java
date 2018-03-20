@@ -1,6 +1,6 @@
-package epam.training.practice3.task2.controller.manipulation;
+package controller.manipulation;
 
-import epam.training.practice3.task2.controller.manipulation.command.*;
+import controller.manipulation.command.*;
 
 public enum ManipulationMenuItem {
     FILTER_BY_SEATS_AMOUNT(new FilterBySeatsCommand(), "get carriages that have amount of seats that in specified range"),

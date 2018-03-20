@@ -1,12 +1,12 @@
-package epam.training.practice2.task2.controller;
+package controller;
 
-import epam.training.practice2.task2.controller.utils.InputUtils;
-import epam.training.practice2.task2.data.DataSource;
-import epam.training.practice2.task2.model.LibraryModel;
-import epam.training.practice2.task2.view.InputMessages;
-import epam.training.practice2.task2.view.LibraryView;
-import epam.training.practice2.task2.view.Menu;
-import epam.training.practice2.task2.view.ResultMessages;
+import controller.utils.InputUtils;
+import data.DataSource;
+import model.LibraryModel;
+import view.InputMessages;
+import view.LibraryView;
+import view.Menu;
+import view.ResultMessages;
 
 public class LibraryController {
     private LibraryModel model;

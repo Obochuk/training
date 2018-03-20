@@ -1,5 +1,3 @@
-package epam.training.practice1.task4;
-
 public class Runner {
     public static void run() {
         int size = 4;

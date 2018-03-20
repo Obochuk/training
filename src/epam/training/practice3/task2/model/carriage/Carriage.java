@@ -1,4 +1,4 @@
-package epam.training.practice3.task2.model.carriage;
+package model.carriage;
 
 public abstract class Carriage {
     private double maxLoad;

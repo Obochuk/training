@@ -1,4 +1,4 @@
-package epam.training.practice3.task1.shop.etc;
+package shop.etc;
 
 public class Product {
     private String name;

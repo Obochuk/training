@@ -1,5 +1,3 @@
-package epam.training.practice1.task4;
-
 final public class SquareMatrix {
     int[][] matrix;
 

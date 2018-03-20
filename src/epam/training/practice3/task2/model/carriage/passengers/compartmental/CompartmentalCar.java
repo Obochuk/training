@@ -1,8 +1,8 @@
-package epam.training.practice3.task2.model.carriage.passengers.compartmental;
+package model.carriage.passengers.compartmental;
 
 
-import epam.training.practice3.task2.model.carriage.passengers.Facility;
-import epam.training.practice3.task2.model.carriage.passengers.PassengersCarriage;
+import model.carriage.passengers.Facility;
+import model.carriage.passengers.PassengersCarriage;
 
 public class CompartmentalCar extends PassengersCarriage {
     {

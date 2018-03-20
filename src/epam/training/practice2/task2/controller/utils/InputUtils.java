@@ -1,6 +1,4 @@
-package epam.training.practice2.task2.controller.utils;
-
-import epam.training.practice2.task2.view.LibraryView;
+package controller.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

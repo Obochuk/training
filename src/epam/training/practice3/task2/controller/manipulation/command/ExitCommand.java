@@ -1,8 +1,9 @@
-package epam.training.practice3.task2.controller.manipulation.command;
+package controller.manipulation.command;
 
-import epam.training.practice3.task2.model.TrainModel;
-import epam.training.practice3.task2.model.carriage.Carriage;
-import epam.training.practice3.task2.view.TrainView;
+import controller.manipulation.command.Command;
+import model.TrainModel;
+import model.carriage.Carriage;
+import view.TrainView;
 
 public class ExitCommand implements Command {
     @Override

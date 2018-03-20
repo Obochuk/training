@@ -1,5 +1,3 @@
-package epam.training.practice3.task3;
-
 import java.lang.reflect.Field;
 import java.util.List;
 
