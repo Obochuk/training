@@ -1,6 +1,6 @@
-package epam.training.practice2.task1.view;
+package view;
 
-import epam.training.practice2.task1.model.graphics.Shape;
+import model.graphics.Shape;
 
 public class GraphicsView {
 

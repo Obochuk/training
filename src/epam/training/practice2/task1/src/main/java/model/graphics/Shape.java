@@ -1,4 +1,4 @@
-package epam.training.practice2.task1.model.graphics;
+package model.graphics;
 
 public abstract class Shape implements Drawable {
     private String shapeColor;
@@ -11,7 +11,6 @@ public abstract class Shape implements Drawable {
         return shapeColor;
     }
 
-    @Override
     public void draw() {
         System.out.println(toString());
     }

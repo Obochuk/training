@@ -1,9 +1,9 @@
-package epam.training.practice2.task1.data;
+package data;
 
-import epam.training.practice2.task1.model.graphics.Shape;
-import epam.training.practice2.task1.model.graphics.figure.Circle;
-import epam.training.practice2.task1.model.graphics.figure.Rectangle;
-import epam.training.practice2.task1.model.graphics.figure.Triangle;
+import model.graphics.Shape;
+import model.graphics.figure.Circle;
+import model.graphics.figure.Rectangle;
+import model.graphics.figure.Triangle;
 
 public class DataSource {
     private final static String BLACK = "black";

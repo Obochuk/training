@@ -1,8 +1,6 @@
-package epam.training.practice2.task1;
-
-import epam.training.practice2.task1.controller.GraphicsController;
-import epam.training.practice2.task1.model.GraphicsModel;
-import epam.training.practice2.task1.view.GraphicsView;
+import controller.GraphicsController;
+import model.GraphicsModel;
+import view.GraphicsView;
 
 public class Main {
     public static void main(String[] args) {

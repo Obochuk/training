@@ -1,6 +1,6 @@
-package epam.training.practice2.task1.model.graphics.figure;
+package model.graphics.figure;
 
-import epam.training.practice2.task1.model.graphics.Shape;
+import model.graphics.Shape;
 
 public class Triangle extends Shape {
 

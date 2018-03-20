@@ -1,8 +1,8 @@
-package epam.training.practice2.task1.model;
+package model;
 
-import epam.training.practice2.task1.model.graphics.Shape;
-import epam.training.practice2.task1.model.graphics.comparator.ShapeAreaComparator;
-import epam.training.practice2.task1.model.graphics.comparator.ShapeColorComparator;
+import model.graphics.Shape;
+import model.graphics.comparator.ShapeAreaComparator;
+import model.graphics.comparator.ShapeColorComparator;
 
 import java.util.Arrays;
 import java.util.Comparator;

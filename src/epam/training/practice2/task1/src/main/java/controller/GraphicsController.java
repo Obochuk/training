@@ -1,9 +1,9 @@
-package epam.training.practice2.task1.controller;
+package controller;
 
-import epam.training.practice2.task1.data.DataSource;
-import epam.training.practice2.task1.model.GraphicsModel;
-import epam.training.practice2.task1.model.graphics.figure.Rectangle;
-import epam.training.practice2.task1.view.GraphicsView;
+import data.DataSource;
+import model.GraphicsModel;
+import model.graphics.figure.Rectangle;
+import view.GraphicsView;
 
 public class GraphicsController {
     private GraphicsModel model;
