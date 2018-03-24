@@ -9,6 +9,8 @@ public class Triangle extends Shape {
 
     public Triangle(String shapeColor, double height, double base) {
         super(shapeColor);
+        if (height < 0 || base < 0)
+            throw new IllegalArgumentException();
         this.height = height;
         this.base = base;
     }

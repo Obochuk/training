@@ -9,6 +9,8 @@ public class Rectangle extends Shape {
 
     public Rectangle(String shapeColor, double height, double width) {
         super(shapeColor);
+        if (height < 0 || width < 0)
+            throw new IllegalArgumentException();
         this.height = height;
         this.width = width;
     }

@@ -8,6 +8,8 @@ public class Circle extends Shape {
 
     public Circle(String shapeColor, double radius) {
         super(shapeColor);
+        if (radius < 0)
+            throw new IllegalArgumentException("Radius cannot be negative");
         this.radius = radius;
     }
 
@@ -19,6 +21,6 @@ public class Circle extends Shape {
 
     @Override
     public double calcArea() {
-        return 2 * Math.PI * radius;
+        return Math.PI * radius * radius;
     }
 }
