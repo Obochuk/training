@@ -1,6 +1,6 @@
-package epam.training.project.vehicle.car.engine;
+package epam.training.project.model.vehicle.car.engine;
 
-import epam.training.project.vehicle.car.fuel.FuelType;
+import epam.training.project.model.vehicle.car.fuel.FuelType;
 
 public enum EngineType {
     GAS(FuelType.GAS), DIESEL(FuelType.DIESEL), ELECTRIC(FuelType.ELECTRICITY),
