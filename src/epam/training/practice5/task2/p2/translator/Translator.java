@@ -23,7 +23,7 @@ public class Translator {
     private String translateWord(String englishWord){
         String translation = dictionary.get(englishWord.toLowerCase());
         if (translation == null)
-            throw new IllegalArgumentException("Dictionary doesn`t contain word " + englishWord);
+            return englishWord;
         return translation;
     }
 }
