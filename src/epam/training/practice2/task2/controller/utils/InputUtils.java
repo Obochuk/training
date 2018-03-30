@@ -16,6 +16,11 @@ public class InputUtils {
     }
 
     public static int readInt() {
-        return Integer.parseInt(readLine());
+
+        try {
+            return Integer.parseInt(readLine());
+        }catch (NumberFormatException e){
+            return readInt();
+        }
     }
 }

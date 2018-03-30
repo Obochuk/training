@@ -1,12 +1,13 @@
-package data;
+package model.data;
 
 import model.entity.Book;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class DataSource {
-    public static List<Book> getBooks(){
+public class StaticDataSource implements DataSource {
+    @Override
+    public List<Book> getBooks(){
         return Arrays.asList(
                 new Book("Harry Potter", "Rowling", "Airplane", 1998, 769, 10),
                 new Book("The Hunger Games", "Collins", "Zarbo", 2001, 538, 20),

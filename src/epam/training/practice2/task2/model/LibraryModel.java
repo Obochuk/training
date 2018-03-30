@@ -1,13 +1,23 @@
 package model;
 
 import model.comparator.BookPublisherComparator;
+import model.data.DataSource;
+import model.data.StaticDataSource;
+import model.data.file.FileAccess;
+import model.data.file.FileDataSource;
 import model.entity.Book;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 import java.util.function.Predicate;
 
 public class LibraryModel {
     private List<Book> books;
+
+    public LibraryModel(){
+        readBooks();
+    }
 
     public List<Book> getBooks() {
         return books;
@@ -15,6 +25,20 @@ public class LibraryModel {
 
     public void setBooks(List<Book> books) {
         this.books = books;
+    }
+
+    public void readBooks(){
+        StaticDataSource source = new StaticDataSource();
+        books = source.getBooks();
+    }
+
+    public void readBooks(String fileName) throws IOException{
+        DataSource source = new FileDataSource(fileName);
+        books = source.getBooks();
+    }
+
+    public void saveBooks(String fileName) throws IOException{
+        FileAccess.writeToFile(books, fileName);
     }
 
     public List<Book> getBooksByAuthor(String author){
