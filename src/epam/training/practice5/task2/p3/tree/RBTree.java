@@ -333,7 +333,7 @@ public class RBTree<T extends Comparable<T>> implements Iterable<T> {
                     next = LEAF;
                     return returned.key;
                 }
-                if (next.parent.left == next) {
+                if (isLeftChild(next)) {
                     next = next.parent;
                     return returned.key;
                 }
