@@ -1,4 +1,4 @@
-package model.constants;
+package controller.command.constants;
 
 public interface RegexExpressions {
     String NAME_EXPR = "[a-zA-Z][a-zA-Z']{1,14}";
