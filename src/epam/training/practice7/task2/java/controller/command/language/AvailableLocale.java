@@ -1,6 +1,6 @@
 package controller.command.language;
 
-import view.messages.Language;
+import view.resource.messages.Language;
 
 import java.util.Locale;
 

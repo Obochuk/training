@@ -1,4 +1,4 @@
-package utils;
+package view.resource;
 
 import java.util.Enumeration;
 import java.util.Locale;

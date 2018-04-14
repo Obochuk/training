@@ -1,6 +1,6 @@
-package view.utils;
+package utils;
 
-public class MenuUtil {
+public class MenuUtils {
 
     public static String generateMenuFromItems(Enum[] menuItems){
         StringBuilder builder = new StringBuilder();

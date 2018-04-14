@@ -1,11 +1,11 @@
 package controller;
 
-import controller.utils.InputUtils;
-import view.utils.MenuUtil;
+import utils.InputUtils;
+import utils.MenuUtils;
 import model.LibraryModel;
 import org.apache.log4j.Logger;
 import view.LibraryView;
-import view.messages.ResultMessage;
+import view.resource.messages.ResultMessage;
 
 public class LibraryController {
     private static Logger LOGGER = Logger.getLogger(LibraryController.class);
@@ -16,7 +16,7 @@ public class LibraryController {
         VIEW.printMessage(ResultMessage.ALL_BOOKS);
         VIEW.print(MODEL.getBooks());
         while (true) {
-            final String MENU = MenuUtil.generateMenuFromItems(MenuItem.values());
+            final String MENU = MenuUtils.generateMenuFromItems(MenuItem.values());
             VIEW.printMessage(MENU);
             int itemNum = InputUtils.readInt();
             try {

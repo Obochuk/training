@@ -1,11 +1,11 @@
 package controller.command.language;
 
 import controller.command.Command;
-import controller.utils.InputUtils;
+import utils.InputUtils;
 import org.apache.log4j.Logger;
-import utils.ResourceManager;
-import view.messages.InputMessage;
-import view.utils.MenuUtil;
+import view.resource.ResourceManager;
+import view.resource.messages.InputMessage;
+import utils.MenuUtils;
 
 public class ChangeLanguageCommand implements Command {
     private static final Logger LOGGER = Logger.getLogger(ChangeLanguageCommand.class);
@@ -13,7 +13,7 @@ public class ChangeLanguageCommand implements Command {
     @Override
     public void execute() {
         VIEW.printMessage(InputMessage.CHOOSE_LANGUAGE);
-        final String MENU = MenuUtil.generateMenuFromItems(AvailableLocale.values());
+        final String MENU = MenuUtils.generateMenuFromItems(AvailableLocale.values());
         VIEW.printMessage(MENU);
         try {
             int chooseLanguage = InputUtils.readInt();

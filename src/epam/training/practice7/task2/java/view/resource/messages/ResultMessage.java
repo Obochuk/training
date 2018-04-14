@@ -1,6 +1,6 @@
-package view.messages;
+package view.resource.messages;
 
-import utils.ResourceManager;
+import view.resource.ResourceManager;
 
 public enum ResultMessage {
     ALL_BOOKS("list.all"),

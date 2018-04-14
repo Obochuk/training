@@ -1,6 +1,6 @@
 package controller.command;
 
-import view.messages.ResultMessage;
+import view.resource.messages.ResultMessage;
 
 public class SortByPublisherCommand implements Command {
     @Override

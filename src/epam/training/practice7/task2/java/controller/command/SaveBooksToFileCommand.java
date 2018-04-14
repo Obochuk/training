@@ -1,8 +1,8 @@
 package controller.command;
 
-import controller.utils.InputUtils;
+import utils.InputUtils;
 import org.apache.log4j.Logger;
-import view.messages.InputMessage;
+import view.resource.messages.InputMessage;
 
 import java.io.IOException;
 

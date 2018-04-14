@@ -1,9 +1,9 @@
 package controller.command.filter;
 
 import controller.command.Command;
-import controller.utils.InputUtils;
-import view.messages.InputMessage;
-import view.messages.ResultMessage;
+import utils.InputUtils;
+import view.resource.messages.InputMessage;
+import view.resource.messages.ResultMessage;
 
 public class FilterByYearCommand implements Command {
     @Override

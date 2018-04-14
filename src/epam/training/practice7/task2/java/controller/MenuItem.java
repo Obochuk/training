@@ -5,7 +5,7 @@ import controller.command.filter.FilterByAuthorCommand;
 import controller.command.filter.FilterByPublisherCommand;
 import controller.command.filter.FilterByYearCommand;
 import controller.command.language.ChangeLanguageCommand;
-import view.messages.MainMenuMessage;
+import view.resource.messages.MainMenuMessage;
 
 public enum MenuItem {
     CHANGE_LANGUAGE(new ChangeLanguageCommand(), MainMenuMessage.CHANGE_LANGUAGE),
