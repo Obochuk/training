@@ -7,7 +7,7 @@ import controller.command.filter.FilterByYearCommand;
 import controller.command.language.ChangeLanguageCommand;
 import view.resource.messages.MainMenuMessage;
 
-public enum MenuItem {
+public enum MainMenuItem {
     CHANGE_LANGUAGE(new ChangeLanguageCommand(), MainMenuMessage.CHANGE_LANGUAGE),
     LOAD_BOOKS(new LoadBooksCommand(), MainMenuMessage.LOAD_BOOKS),
     GET_BOOKS_BY_AUTHOR(new FilterByAuthorCommand(), MainMenuMessage.FILTER_BY_AUTHOR),
@@ -20,7 +20,7 @@ public enum MenuItem {
     private Command command;
     private MainMenuMessage message;
 
-    MenuItem(Command command, MainMenuMessage message) {
+    MainMenuItem(Command command, MainMenuMessage message) {
         this.command = command;
         this.message = message;
     }

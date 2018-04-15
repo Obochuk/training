@@ -10,14 +10,10 @@ public class LibraryView {
 
     private LibraryView(){}
 
-    public void printMessage(Enum enumValue){
-        System.out.println(enumValue);
+    public void printMessage(Object value){
+        System.out.println(value);
     }
-
-    public void printMessage(String message){
-        System.out.println(message);
-    }
-
+    
     public void print(List<Book> books){
         for (Book book : books) {
             System.out.println(book);

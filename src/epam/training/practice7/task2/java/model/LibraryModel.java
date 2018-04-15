@@ -1,19 +1,16 @@
 package model;
 
-import utils.FileAccessor;
-import model.entity.comparator.BookPublisherComparator;
-import model.data.DataSource;
-import model.data.StaticDataSource;
 import model.data.FileDataSource;
+import model.data.StaticDataSource;
 import model.entity.Book;
+import model.entity.comparator.BookPublisherComparator;
 import org.apache.log4j.Logger;
+import utils.FileAccessor;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Comparator;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class LibraryModel {
