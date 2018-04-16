@@ -1,5 +1,6 @@
 package model;
 
+
 import model.comparator.BookPublisherComparator;
 import model.data.DataSource;
 import model.data.StaticDataSource;
@@ -33,7 +34,7 @@ public class LibraryModel {
         books = source.getBooks();
     }
 
-    public void readBooks(String fileName) throws IOException{
+    public void readBooks(String fileName) throws IOException {
         DataSource source = new FileDataSource(fileName);
         books = source.getBooks();
     }

@@ -1,6 +1,6 @@
-package model.data;
+package src.main.model.data;
 
-import model.entity.Book;
+import src.main.model.entity.Book;
 
 import java.util.Arrays;
 import java.util.List;
