@@ -1,4 +1,4 @@
-package src.main.model.entity;
+package model.entity;
 
 import java.io.Serializable;
 
@@ -75,4 +75,6 @@ public class Book implements Serializable{
                 + ", year of publishing=" + published + ", pages amount=" + pagesAmount
                 + ", price=$" + price;
     }
+
+
 }
