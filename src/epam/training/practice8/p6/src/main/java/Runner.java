@@ -36,22 +36,18 @@ public class Runner {
         List<Person> reservists = generatedPersons.stream()
                 .filter(person -> person.getGender() == Reservist.GENDER &&
                         person.getAge() >= Reservist.MIN_AGE &&
-                        person.getAge() < Reservist.MAX_AGE).collect(Collectors.toList());
+                        person.getAge() < Reservist.MAX_AGE)
+                .collect(Collectors.toList());
 
         System.out.println("Reservists: " + reservists);
 
         System.out.println(SEPARATOR);
 
         System.out.println("task4. Mean female age: ");
-        List<Person> females = generatedPersons.stream()
+        double meanAge = generatedPersons.stream()
                 .filter(person -> person.getGender() == Gender.FEMALE)
-                .collect(Collectors.toList());
-        int ageSum = females.stream()
                 .mapToInt(Person::getAge)
-                .sum();
-        double meanAge = ageSum / (double) females.size();
+                .average().getAsDouble();
         System.out.print(meanAge);
     }
-
-
 }
