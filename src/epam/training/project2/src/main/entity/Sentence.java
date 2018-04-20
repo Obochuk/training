@@ -28,7 +28,7 @@ public class Sentence {
     }
 
     private List<Word> initWordList(){
-        return Arrays.stream(value.split("\\P{L}+"))
+        return Arrays.stream(value.split("[^\\p{L}'’ʼ‒–—]+"))
                 .map(Word::new)
                 .collect(Collectors.toList());
     }
