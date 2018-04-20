@@ -1,5 +1,3 @@
-package src.main.java;
-
 import src.main.java.utils.ArrayGenerator;
 
 import java.util.concurrent.ForkJoinPool;
