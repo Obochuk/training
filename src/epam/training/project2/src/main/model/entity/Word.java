@@ -1,4 +1,4 @@
-package entity;
+package model.entity;
 
 public class Word {
     private String value;

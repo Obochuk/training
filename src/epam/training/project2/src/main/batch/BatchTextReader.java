@@ -1,6 +1,6 @@
-package file;
+package batch;
 
-import entity.Text;
+import model.entity.Text;
 
 import java.io.EOFException;
 import java.io.IOException;

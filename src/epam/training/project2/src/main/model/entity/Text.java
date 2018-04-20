@@ -1,4 +1,4 @@
-package entity;
+package model.entity;
 
 import java.text.BreakIterator;
 import java.util.ArrayList;

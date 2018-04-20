@@ -1,4 +1,4 @@
-package entity;
+package model.entity;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -39,8 +39,8 @@ public class TestSentence {
                 {"Hello my darling!", new Word("my"), 1,
                         Arrays.asList(new Word("Hello"), new Word("my"), new Word("darling"))},
 
-                {"What is up?", new Word("Cherry"), 0, Arrays.asList(
-                        new Word("What"), new Word("is"), new Word("up"))},
+                {"What's up?", new Word("Cherry"), 0, Arrays.asList(
+                        new Word("What's"), new Word("up"))},
 
                 {"Just do it again, baby boy, and all will be alright, soon future will show to us its willing...",
                 new Word("it"), 1, Arrays.stream("Just do it again baby boy and all will be alright soon future will show to us its willing"

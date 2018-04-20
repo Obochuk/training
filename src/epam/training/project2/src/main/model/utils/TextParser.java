@@ -1,9 +1,10 @@
-package utils;
+package model.utils;
 
-import entity.Sentence;
-import entity.Text;
-import entity.Word;
+import model.entity.Sentence;
+import model.entity.Text;
+import model.entity.Word;
 import report.ReportBuilder;
+import utils.MapUtils;
 
 import java.util.Collections;
 import java.util.HashMap;
