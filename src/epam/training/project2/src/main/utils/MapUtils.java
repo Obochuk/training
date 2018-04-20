@@ -1,9 +1,6 @@
 package utils;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MapUtils {
     public static <K> void increaseValue(Map<K, Integer> map, K key, int increase){
@@ -23,7 +20,7 @@ public class MapUtils {
 
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map){
         List<Map.Entry<K, V>> entryList = new ArrayList<>(map.entrySet());
-        entryList.sort(Map.Entry.comparingByValue());
+        entryList.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
 
         Map<K, V> result = new LinkedHashMap<>();
         for (Map.Entry<K, V> entry : entryList){
