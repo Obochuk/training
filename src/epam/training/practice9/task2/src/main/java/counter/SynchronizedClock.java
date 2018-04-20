@@ -1,4 +1,4 @@
-package epam.training.practice9.task2.src.main.java.counter;
+package src.main.java.counter;
 
 public class SynchronizedClock implements Runnable {
     private final int COUNT_TO = 1_000;

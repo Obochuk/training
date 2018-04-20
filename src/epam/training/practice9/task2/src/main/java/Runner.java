@@ -1,6 +1,7 @@
-package epam.training.practice9.task2.src.main.java;
+package src.main.java;
 
-import epam.training.practice9.task2.src.main.java.counter.SynchronizedClock;
+
+import src.main.java.counter.SynchronizedClock;
 
 public class Runner {
 

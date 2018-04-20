@@ -1,4 +1,4 @@
-package epam.training.practice9.task2.src.main.java;
+package src.main.java;
 
 public class Main {
 
