@@ -2,10 +2,13 @@ package src.main.java.manipulator;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class MapManipulator<K, V> implements IMapManipulator<K, V> {
 
     private Map<K, V> map = new HashMap<>();
+    private ReadWriteLock lock = new ReentrantReadWriteLock();
 
     @Override
     public Map<K, V> getState() {
@@ -18,12 +21,22 @@ public class MapManipulator<K, V> implements IMapManipulator<K, V> {
     }
 
     @Override
-    public synchronized void writeData(Map.Entry<K, V> entry) {
-        map.put(entry.getKey(), entry.getValue());
+    public void writeData(Map.Entry<K, V> entry) {
+        try {
+            lock.writeLock().lock();
+            map.put(entry.getKey(), entry.getValue());
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 
     @Override
-    public synchronized void readData(K key) {
-        map.get(key);
+    public void readData(K key) {
+        try {
+            lock.readLock().lock();
+            map.get(key);
+        } finally {
+            lock.readLock().unlock();
+        }
     }
 }
