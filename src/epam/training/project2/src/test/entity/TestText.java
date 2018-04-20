@@ -44,10 +44,6 @@ public class TestText {
         });
     }
 
-    @Test
-    public void testAmountOf(){
-        assertEquals(expectedAmount, text.amountOf(word));
-    }
 
     @Test
     public void testGetSentences(){

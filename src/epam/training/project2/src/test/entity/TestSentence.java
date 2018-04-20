@@ -48,10 +48,6 @@ public class TestSentence {
         });
     }
 
-    @Test
-    public void testAmountOf(){
-        assertEquals(expectedAmount, sentence.amountOf(word));
-    }
 
     @Test
     public void testGetWordsOfSentence(){

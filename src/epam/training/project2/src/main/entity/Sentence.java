@@ -1,7 +1,6 @@
 package entity;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,10 +16,6 @@ public class Sentence {
 
     public String getValue() {
         return value;
-    }
-
-    public int amountOf(Word word){
-        return Collections.frequency(wordsOfSentence, word);
     }
 
     public List<Word> getWordsOfSentence() {

@@ -22,12 +22,6 @@ public class Text {
         return sentences;
     }
 
-    public int amountOf(Word word){
-        return sentences.stream()
-                .mapToInt(sentence -> sentence.amountOf(word))
-                .sum();
-    }
-
     private List<Sentence> initSentenceList(){
         List<Sentence> sentences = new ArrayList<>();
 

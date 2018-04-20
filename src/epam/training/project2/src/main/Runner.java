@@ -33,7 +33,7 @@ public class Runner {
 
     }
 
-    private static <K> void parseAndReport(List<Word> wordList, InputStreamReader reader,
+    private static void parseAndReport(List<Word> wordList, InputStreamReader reader,
                                                       OutputStreamWriter detailedReportWriter,
                                                       OutputStreamWriter smallReportWriter) throws IOException{
 
@@ -42,7 +42,7 @@ public class Runner {
         while (true) {
             try {
                 Text nextBatch = batchTextReader.readBatchOfText(BATCH_SIZE);
-                detailedReportWriter.write(TextParser.generateDetailedReport(nextBatch, wordList));
+                detailedReportWriter.write(TextParser.generateReport(nextBatch, wordList));
                 MapUtils.increaseValue(wordsAmount, TextParser.numberOfOccurrences(nextBatch, wordList));
             } catch (EOFException e) {
                 break;
