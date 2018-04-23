@@ -1,6 +1,6 @@
-package database.dao;
+package entity.department;
 
-import entity.Department;
+import database.GenericDAO;
 import org.apache.log4j.Logger;
 
 import java.sql.PreparedStatement;

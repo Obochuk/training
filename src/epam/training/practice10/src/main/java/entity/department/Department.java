@@ -1,4 +1,4 @@
-package entity;
+package entity.department;
 
 public class Department {
     private Integer id;

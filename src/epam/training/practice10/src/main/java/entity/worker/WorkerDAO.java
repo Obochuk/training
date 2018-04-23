@@ -1,6 +1,6 @@
-package database.dao;
+package entity.worker;
 
-import entity.Worker;
+import database.GenericDAO;
 import org.apache.log4j.Logger;
 
 import java.sql.PreparedStatement;

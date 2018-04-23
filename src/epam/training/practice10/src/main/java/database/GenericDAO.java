@@ -1,4 +1,4 @@
-package database.dao;
+package database;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -10,7 +10,7 @@ public abstract class GenericDAO<T> {
 
     public abstract int update(PreparedStatement statement);
 
-    <R> R getFiled(GetResultPartFunction<R> func, String fieldName){
+    protected <R> R getFiled(GetResultPartFunction<R> func, String fieldName){
         try {
             return func.apply(fieldName);
         } catch (SQLException e){

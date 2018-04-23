@@ -1,4 +1,4 @@
-package entity;
+package entity.worker;
 
 public class Worker {
     private Integer id;
