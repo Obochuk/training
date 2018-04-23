@@ -2,6 +2,7 @@ package entity.task;
 
 import database.GenericDAO;
 import org.apache.log4j.Logger;
+import view.message.LogMessage;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,7 +25,7 @@ public class TaskDAO extends GenericDAO<Task> {
                 task.setUserId(getFiled(result::getInt, "userId"));
             }
         } catch (SQLException e){
-            LOGGER.error("Error executing select query", e);
+            LOGGER.error(LogMessage.SELECT_ERROR, e);
         }
         return tasks;
     }
@@ -34,7 +35,7 @@ public class TaskDAO extends GenericDAO<Task> {
         try {
             return statement.executeUpdate();
         } catch (SQLException e){
-            LOGGER.error("Cannot execute update query", e);
+            LOGGER.error(LogMessage.UPDATE_ERROR, e);
         }
         return 0;
     }

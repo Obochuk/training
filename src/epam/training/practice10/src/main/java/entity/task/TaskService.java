@@ -4,6 +4,7 @@ import database.GenericService;
 import database.query.Queries;
 import entity.worker.Worker;
 import org.apache.log4j.Logger;
+import view.message.LogMessage;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -21,7 +22,7 @@ public class TaskService extends GenericService<Task>{
 
             return dao.select(statement);
         } catch (SQLException e){
-            LOGGER.error("Cannot prepare statement", e);
+            LOGGER.error(LogMessage.PREPARE_STATEMENT_ERROR, e);
         }
         return new ArrayList<>();
     }
@@ -32,7 +33,7 @@ public class TaskService extends GenericService<Task>{
             statement.setInt(1, worker.getId());
             return dao.select(statement);
         } catch (SQLException e){
-            LOGGER.error("Cannot prepare statement", e);
+            LOGGER.error(LogMessage.PREPARE_STATEMENT_ERROR, e);
         }
         return new ArrayList<>();
     }
@@ -44,7 +45,7 @@ public class TaskService extends GenericService<Task>{
             statement.setInt(2, task.getUserId());
             dao.update(statement);
         }catch (SQLException e){
-            LOGGER.error("Cannot prepare statement", e);
+            LOGGER.error(LogMessage.PREPARE_STATEMENT_ERROR, e);
         }
     }
 }

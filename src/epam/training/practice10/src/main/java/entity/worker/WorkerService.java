@@ -5,6 +5,7 @@ import database.GenericService;
 import database.query.Queries;
 import entity.department.Department;
 import org.apache.log4j.Logger;
+import view.message.LogMessage;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -23,7 +24,7 @@ public class WorkerService extends GenericService<Worker>{
 
             return dao.select(statement);
         } catch (SQLException e){
-            LOGGER.error("Cannot prepare statement", e);
+            LOGGER.error(LogMessage.PREPARE_STATEMENT_ERROR, e);
         }
         return new ArrayList<>();
     }
@@ -34,7 +35,7 @@ public class WorkerService extends GenericService<Worker>{
             statement.setInt(1, department.getId());
             return dao.select(statement);
         } catch (SQLException e){
-            LOGGER.error("Cannot prepare statement", e);
+            LOGGER.error(LogMessage.PREPARE_STATEMENT_ERROR, e);
         }
         return new ArrayList<>();
     }
@@ -45,7 +46,7 @@ public class WorkerService extends GenericService<Worker>{
             statement.setInt(1, worker.getId());
             dao.update(statement);
         } catch (SQLException e){
-            LOGGER.error("Cannot prepare statement", e);
+            LOGGER.error(LogMessage.PREPARE_STATEMENT_ERROR, e);
         }
     }
 }

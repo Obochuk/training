@@ -2,6 +2,7 @@ package entity.worker;
 
 import database.GenericDAO;
 import org.apache.log4j.Logger;
+import view.message.LogMessage;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,7 +27,7 @@ public class WorkerDAO extends GenericDAO<Worker> {
                 worker.setSurname(getFiled(result::getString, "surname"));
             }
         } catch (SQLException e){
-            LOGGER.error("Error executing select query", e);
+            LOGGER.error(LogMessage.SELECT_ERROR, e);
         }
         return workers;
     }
@@ -36,7 +37,7 @@ public class WorkerDAO extends GenericDAO<Worker> {
         try {
             return statement.executeUpdate();
         } catch (SQLException e){
-            LOGGER.error("Cannot execute update query", e);
+            LOGGER.error(LogMessage.UPDATE_ERROR, e);
         }
         return 0;
     }
