@@ -20,7 +20,7 @@ public class DepartmentDAO extends GenericDAO<Department> {
             ResultSet result = statement.executeQuery();
             while (result.next()){
                 Department department = new Department();
-                department.setId(getFiled(result::getInt, "int"));
+                department.setId(getFiled(result::getInt, "id"));
                 department.setPhone(getFiled(result::getString, "phone"));
                 department.setName(getFiled(result::getString, "name"));
                 departments.add(department);
