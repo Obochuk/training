@@ -1,9 +1,17 @@
-package entity.task;
+package model.entity;
 
 public class Task {
     private Integer id;
     private String description;
-    private Integer userId;
+    private Integer workerId;
+
+    public Task(){}
+
+    public Task(Integer id, String description, Integer workerId) {
+        this.id = id;
+        this.description = description;
+        this.workerId = workerId;
+    }
 
     public Integer getId() {
         return id;
@@ -21,12 +29,12 @@ public class Task {
         this.description = description;
     }
 
-    public Integer getUserId() {
-        return userId;
+    public Integer getWorkerId() {
+        return workerId;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setWorkerId(Integer workerId) {
+        this.workerId = workerId;
     }
 
     @Override
@@ -34,7 +42,7 @@ public class Task {
         return "Task{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
-                ", userId=" + userId +
+                ", workerId=" + workerId +
                 '}';
     }
 }

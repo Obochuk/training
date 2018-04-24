@@ -1,9 +1,17 @@
-package entity.department;
+package model.entity;
 
 public class Department {
     private Integer id;
     private String name;
     private String phone;
+
+    public Department(){}
+
+    public Department(Integer id, String name, String phone) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+    }
 
     public Integer getId() {
         return id;

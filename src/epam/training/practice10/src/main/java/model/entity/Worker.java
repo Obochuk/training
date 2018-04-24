@@ -1,4 +1,4 @@
-package entity.worker;
+package model.entity;
 
 public class Worker {
     private Integer id;
@@ -6,6 +6,16 @@ public class Worker {
     private String surname;
     private String position;
     private Integer departmentId;
+
+    public Worker(){}
+
+    public Worker(Integer id, String name, String surname, String position, Integer departmentId) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.position = position;
+        this.departmentId = departmentId;
+    }
 
     public int getId() {
         return id;

@@ -1,7 +1,6 @@
-package database.connection;
+package model.database.connection;
 
 import org.apache.log4j.Logger;
-import view.message.LogMessage;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,7 +28,7 @@ public class DatabaseConnection {
         try {
             connection = DriverManager.getConnection(url, user, password);
         } catch (SQLException e){
-            LOGGER.error(LogMessage.CANT_CONNECT, e);
+            LOGGER.error("Can't connect to database", e);
         }
     }
 }
