@@ -58,7 +58,7 @@ public class DepartmentDAO implements GenericDAO<Department, Integer> {
         PreparedStatement statement = CONNECTION.prepareStatement(Query.DELETE);
         statement.setInt(1, elem.getId());
 
-        return statement.execute();
+        return statement.executeUpdate() > 0;
     }
 
     @Override
@@ -73,16 +73,21 @@ public class DepartmentDAO implements GenericDAO<Department, Integer> {
         statement.setString(4, elem.getName());
         statement.setString(5, elem.getPhone());
 
-        return statement.execute();
+        return statement.executeUpdate() > 0;
     }
 
     @Override
     public boolean insert(Department elem) throws SQLException {
-        PreparedStatement statement = CONNECTION.prepareStatement(Query.INSERT);
+        PreparedStatement statement = CONNECTION.prepareStatement(Query.INSERT, Statement.RETURN_GENERATED_KEYS);
         statement.setString(1, elem.getName());
         statement.setString(2, elem.getPhone());
 
-        return statement.execute();
+        int rowsAffected = statement.executeUpdate();
+
+        ResultSet generatedKey = statement.getGeneratedKeys();
+        if (generatedKey.next())
+            elem.setId(generatedKey.getInt(1));
+        return rowsAffected > 0;
     }
 
     private Department retrieveDepartment(ResultSet resultSet) throws SQLException{

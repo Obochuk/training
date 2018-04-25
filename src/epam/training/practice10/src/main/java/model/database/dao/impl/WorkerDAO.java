@@ -101,7 +101,12 @@ public class WorkerDAO implements GenericDAO<Worker, Integer> {
         statement.setString(3, elem.getPosition());
         statement.setInt(4, elem.getDepartmentId());
 
-        return statement.execute();
+        int rowsAffected = statement.executeUpdate();
+
+        ResultSet generatedKey = statement.getGeneratedKeys();
+        if (generatedKey.next())
+            elem.setId(generatedKey.getInt(1));
+        return rowsAffected > 0;
     }
 
     private Worker retrieveWorker(ResultSet resultSet) throws SQLException{

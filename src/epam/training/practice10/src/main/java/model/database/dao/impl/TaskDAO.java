@@ -94,7 +94,12 @@ public class TaskDAO implements GenericDAO<Task, Integer> {
         statement.setString(1, elem.getDescription());
         statement.setInt(2, elem.getWorkerId());
 
-        return statement.execute();
+        int rowsAffected = statement.executeUpdate();
+
+        ResultSet generatedKey = statement.getGeneratedKeys();
+        if (generatedKey.next())
+            elem.setId(generatedKey.getInt(1));
+        return rowsAffected > 0;
     }
 
     private Task retrieveTask(ResultSet resultSet) throws SQLException{
