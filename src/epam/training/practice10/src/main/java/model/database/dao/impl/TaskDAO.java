@@ -27,8 +27,9 @@ public class TaskDAO implements GenericDAO<Task, Integer> {
         String GET_WORKER_TASKS = "SELECT * FROM tasks WHERE workerId = ?";
         String GET_BY_ID = "SELECT * FROM tasks WHERE id = ?";
         String DELETE = "DELETE FROM tasks WHERE id = ?";
-        String UPSERT = "INSERT INTO tasks (id, description, workerId) VALUES(?, ?, ?)" +
+        String MERGE = "INSERT INTO tasks (id, description, workerId) VALUES(?, ?, ?)" +
                 "ON DUPLICATE KEY UPDATE description = ?, workerId = ?";
+        String INSERT = "INSERT INTO tasks (description, workerId) VALUES(?, ?, ?)";
     }
 
     @Override
@@ -58,6 +59,7 @@ public class TaskDAO implements GenericDAO<Task, Integer> {
         PreparedStatement statement = CONNECTION.prepareStatement(Query.GET_BY_ID);
         statement.setInt(1, id);
         ResultSet resultSet = statement.executeQuery();
+
         if (resultSet.next())
             return retrieveTask(resultSet);
         return null;
@@ -67,17 +69,30 @@ public class TaskDAO implements GenericDAO<Task, Integer> {
     public boolean delete(Task elem) throws SQLException {
         PreparedStatement statement = CONNECTION.prepareStatement(Query.DELETE);
         statement.setInt(1, elem.getId());
+
         return statement.execute();
     }
 
     @Override
-    public boolean upsert(Task elem) throws SQLException {
-        PreparedStatement statement = CONNECTION.prepareStatement(Query.UPSERT);
+    public boolean merge(Task elem) throws SQLException {
+        if (elem.getId() == null)
+            insert(elem);
+
+        PreparedStatement statement = CONNECTION.prepareStatement(Query.MERGE);
         statement.setInt(1, elem.getId());
         statement.setString(2, elem.getDescription());
         statement.setInt(3, elem.getWorkerId());
         statement.setString(4, elem.getDescription());
         statement.setInt(5, elem.getWorkerId());
+
+        return statement.execute();
+    }
+
+    @Override
+    public boolean insert(Task elem) throws SQLException {
+        PreparedStatement statement = CONNECTION.prepareStatement(Query.INSERT);
+        statement.setString(1, elem.getDescription());
+        statement.setInt(2, elem.getWorkerId());
 
         return statement.execute();
     }

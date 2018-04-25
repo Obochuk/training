@@ -39,7 +39,7 @@ public class Controller {
 
             Worker workerWithNewTask = getRandom(workers);
             Task newTask = new Task(100, "Get out", workerWithNewTask.getId());
-            taskDAO.upsert(newTask);
+            taskDAO.merge(newTask);
             view.printMessageAndResult(ResultMessage.TASK_INSERTED, newTask);
 
             List<Task> tasksOfWorker = taskDAO.getWorkerTasks(workerWithNewTask);

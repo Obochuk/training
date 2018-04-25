@@ -27,8 +27,9 @@ public class WorkerDAO implements GenericDAO<Worker, Integer> {
         String GET_DEPARTMENT_WORKERS = "SELECT * FROM workers WHERE departmentId = ?";
         String GET_BY_ID = "SELECT * FROM workers WHERE id = ?";
         String DELETE = "DELETE FROM workers WHERE id = ?";
-        String UPSERT = "INSERT INTO workers (id, name, surname, position, departmentId) VALUES(?, ?, ?, ?, ?)" +
+        String MERGE = "INSERT INTO workers (id, name, surname, position, departmentId) VALUES(?, ?, ?, ?, ?)" +
                 "ON DUPLICATE KEY UPDATE name = ?, surname = ?, position = ?, departmentId = ?";
+        String INSERT = "INSERT INTO workers(name, surname, position, departmentId) VALUES(?, ?, ?, ?)";
     }
 
     @Override
@@ -59,6 +60,7 @@ public class WorkerDAO implements GenericDAO<Worker, Integer> {
         PreparedStatement statement = CONNECTION.prepareStatement(Query.GET_BY_ID);
         statement.setInt(1, id);
         ResultSet resultSet = statement.executeQuery();
+
         if (resultSet.next())
             return retrieveWorker(resultSet);
         return null;
@@ -68,12 +70,16 @@ public class WorkerDAO implements GenericDAO<Worker, Integer> {
     public boolean delete(Worker elem) throws SQLException {
         PreparedStatement statement = CONNECTION.prepareStatement(Query.DELETE);
         statement.setInt(1, elem.getId());
+
         return statement.execute();
     }
 
     @Override
-    public boolean upsert(Worker elem) throws SQLException {
-        PreparedStatement statement = CONNECTION.prepareStatement(Query.UPSERT);
+    public boolean merge(Worker elem) throws SQLException {
+        if (elem.getId() == null)
+            return insert(elem);
+
+        PreparedStatement statement = CONNECTION.prepareStatement(Query.MERGE);
         statement.setInt(1, elem.getId());
         statement.setString(2, elem.getName());
         statement.setString(3, elem.getSurname());
@@ -83,6 +89,17 @@ public class WorkerDAO implements GenericDAO<Worker, Integer> {
         statement.setString(7, elem.getSurname());
         statement.setString(8, elem.getPosition());
         statement.setInt(9, elem.getDepartmentId());
+
+        return statement.execute();
+    }
+
+    @Override
+    public boolean insert(Worker elem) throws SQLException {
+        PreparedStatement statement = CONNECTION.prepareStatement(Query.INSERT);
+        statement.setString(1, elem.getName());
+        statement.setString(2, elem.getSurname());
+        statement.setString(3, elem.getPosition());
+        statement.setInt(4, elem.getDepartmentId());
 
         return statement.execute();
     }
