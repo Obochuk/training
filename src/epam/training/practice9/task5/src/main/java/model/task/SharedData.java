@@ -2,15 +2,18 @@ package model.task;
 
 import java.io.File;
 import java.util.Map;
-import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class SharedData {
     private char firstLetter;
     private Map<File, Long> results;
     private AtomicInteger threadsStarted = new AtomicInteger(1);
     private AtomicInteger threadsEnded = new AtomicInteger();
-    private Semaphore semaphore = new Semaphore(0);
+    private Lock lock = new ReentrantLock();
+    private Condition resultCalculated = lock.newCondition();
 
     public SharedData(char firstLetter, Map<File, Long> results) {
         this.firstLetter = firstLetter;
@@ -21,25 +24,34 @@ public class SharedData {
         return firstLetter;
     }
 
-    public void threadStarted(){
+    public void threadStarted() {
         threadsStarted.incrementAndGet();
     }
 
-    public void addResult(File file, long amount){
+    public void addResult(File file, long amount) {
         results.put(file, amount);
     }
 
-    public void threadEnded(){
+    public void threadEnded() {
         threadsEnded.incrementAndGet();
         if (threadsEnded.get() == threadsStarted.get())
-            semaphore.release(Integer.MAX_VALUE);
+            try {
+                lock.lock();
+                resultCalculated.signal();
+            } finally {
+                lock.unlock();
+            }
     }
 
-    public Map<File, Long> getResults(){
+    public Map<File, Long> getResults() {
         try {
-            semaphore.acquire();
+            lock.lock();
+            resultCalculated.await();
             return results;
-        } catch (InterruptedException ignored){}
+        } catch (InterruptedException ignored) {
+        } finally {
+            lock.unlock();
+        }
         return null;
     }
 }
