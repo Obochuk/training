@@ -41,8 +41,7 @@ public class SharedData {
     public Map<File, Long> getResults(){
         try {
             semaphore.acquire();
-            return results;
         } catch (InterruptedException ignored){}
-        return null;
+        return results;
     }
 }
