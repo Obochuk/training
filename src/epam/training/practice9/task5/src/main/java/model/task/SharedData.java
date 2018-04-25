@@ -4,15 +4,12 @@ import java.io.File;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class SharedData {
     private char firstLetter;
     private Map<File, Long> results;
     private AtomicInteger threadsStarted = new AtomicInteger(1);
     private AtomicInteger threadsEnded = new AtomicInteger();
-    private Lock lock = new ReentrantLock();
     private Semaphore semaphore = new Semaphore(0);
 
     public SharedData(char firstLetter, Map<File, Long> results) {
